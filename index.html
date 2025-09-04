@@ -5,101 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoja de Vida - Juan Felipe Aguirre</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f6fa;
+      background: linear-gradient(135deg, #2196f3, #00bcd4); /* Azul brillante */
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 800px;
       margin: 40px auto;
       background: white;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     }
+
     h1 {
       text-align: center;
-      color: #2c3e50;
+      color: #b71c1c; /* Rojo oscuro */
+      margin-bottom: 10px;
     }
+
     .info {
-      margin: 20px 0;
       text-align: center;
+      margin-bottom: 20px;
     }
+
     .info p {
       font-size: 18px;
       margin: 5px 0;
+      color: #b71c1c;
     }
+
+    .imagen-redonda {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .letra1 {
+      font-family: "Story Script", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      color: #b71c1c;
+    }
+
     .section {
       margin-top: 30px;
     }
+
     .section h2 {
-      border-bottom: 2px solid #3498db;
-      color: #3498db;
+      border-bottom: 2px solid #b71c1c;
+      color: #b71c1c;
       padding-bottom: 5px;
+      margin-bottom: 15px;
     }
+
     ul {
       list-style-type: none;
       padding: 0;
     }
+
     ul li {
-      background: #ecf0f1;
+      background: #ffebee;
       margin: 8px 0;
       padding: 10px;
       border-radius: 8px;
+      color: #b71c1c;
     }
-   .letra1 {
-  font-family: "Story Script", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
- .imagen-redonda {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto;
-}
 
+    .objetivo {
+      background-color: #fff3e0;
+      padding: 15px;
+      border-radius: 10px;
+      color: #6d4c41;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .imagen-redonda {
+        width: 150px;
+        height: 150px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1 class="letra1">PERFIL</h1>
+    <img src="unnamed.jpg" alt="Foto de Juan Felipe Aguirre" class="imagen-redonda">
     <div class="info">
-      <p class="letra1">Juan Felipe Aguirre</p>
-      <p class="letra1"> 17 años</p>
-      <p class="letra1"> 3158983571</p>
+      <p class="letra1"><strong>Juan Felipe Aguirre</strong></p>
+      <p class="letra1">17 años</p>
+      <p class="letra1">📞 315 898 3571</p>
+      <p class="letra1">📍 Cartago,Valle del Cauca</p>
     </div>
-    <img src="unnamed.jpg" alt="Descripción de la imagen" class="imagen-redonda">
-    
+
+    <div class="objetivo">
+      Soy una persona responsable, con habilidades para conducir, orientarme en la ciudad y respetar las normas de tránsito. Busco una oportunidad para desarrollarme profesionalmente y aportar con seguridad y compromiso.
+    </div>
+
     <div class="section">
       <h2>Habilidades</h2>
       <ul>
         <li>Conducir</li>
         <li>Transporte de personas</li>
-        <li>Conocimiento y respeto por las normas de transito</li>
-        <li>Orientacion y ubicacion en la ciudad</li>
-        <li>Conduccion preventiva y segura</li>
+        <li>Conocimiento y respeto por las normas de tránsito</li>
+        <li>Orientación y ubicación en la ciudad</li>
+        <li>Conducción preventiva y segura</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Educación</h2>
+      <ul>
+        <li>Bachillerato en curso 11 – Colegio I.E.GABO</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Experiencia</h2>
+      <ul>
+        <li>Conductor aprendiz en entornos urbanos</li>
+        <li>Participación en simulacros y capacitaciones de seguridad vial</li>
       </ul>
     </div>
   </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 
