@@ -1,72 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hoja de Vida - Juan Felipe Aguirre</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet" />
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #2196f3, #00bcd4); /* Azul brillante */
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff8e1, #ffe082); /* Dorado claro */
+      color: #5d4037;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 950px;
       margin: 40px auto;
-      background: white;
-      padding: 30px;
+      background: #ffffff;
       border-radius: 15px;
-      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
     }
 
     h1 {
       text-align: center;
-      color: #b71c1c; /* Rojo oscuro */
-      margin-bottom: 10px;
-    }
-
-    .info {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .info p {
-      font-size: 18px;
-      margin: 5px 0;
-      color: #b71c1c;
+      color: #bfa100;
+      font-family: 'Story Script', cursive;
+      margin-top: 20px;
+      font-size: 42px;
     }
 
     .imagen-redonda {
       border-radius: 50%;
-      width: 180px;
-      height: 180px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       display: block;
       margin: 20px auto;
-      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.6);
     }
 
-    .letra1 {
-      font-family: "Story Script", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      color: #b71c1c;
+    .info p {
+      text-align: center;
+      font-size: 18px;
+      margin: 5px 0;
+      color: #6d4c41;
     }
 
-    .section {
-      margin-top: 30px;
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #ffca28; /* Dorado */
+      justify-content: center;
     }
 
-    .section h2 {
-      border-bottom: 2px solid #b71c1c;
-      color: #b71c1c;
+    .nav button {
+      flex: 1 1 auto;
+      padding: 15px 20px;
+      background: none;
+      border: none;
+      color: #3e2723;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav button:hover, .nav button.active {
+      background-color: #ffd740;
+      color: #000;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 30px;
+      animation: fadeIn 0.5s;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    h2 {
+      color: #bfa100;
+      border-bottom: 2px solid #ffecb3;
       padding-bottom: 5px;
       margin-bottom: 15px;
+    }
+
+    .objetivo, ul li {
+      background-color: #fffde7;
+      color: #795548;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.08);
     }
 
     ul {
@@ -74,78 +108,120 @@
       padding: 0;
     }
 
-    ul li {
-      background: #ffebee;
-      margin: 8px 0;
-      padding: 10px;
-      border-radius: 8px;
-      color: #b71c1c;
-    }
-
-    .objetivo {
-      background-color: #fff3e0;
-      padding: 15px;
-      border-radius: 10px;
-      color: #6d4c41;
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-
     @media (max-width: 600px) {
-      .container {
-        margin: 20px;
-        padding: 20px;
+      .nav button {
+        font-size: 14px;
+        padding: 12px;
       }
       .imagen-redonda {
-        width: 150px;
-        height: 150px;
+        width: 130px;
+        height: 130px;
       }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1 class="letra1">PERFIL</h1>
-    <img src="unnamed.jpg" alt="Foto de Juan Felipe Aguirre" class="imagen-redonda">
-    <div class="info">
-      <p class="letra1"><strong>Juan Felipe Aguirre</strong></p>
-      <p class="letra1">17 años</p>
-      <p class="letra1">📞 315 898 3571</p>
-      <p class="letra1">📍 Cartago,Valle del Cauca</p>
+    <h1>Juan Felipe Aguirre</h1>
+    <img src="unnamed.jpg" alt="Foto de Juan Felipe Aguirre" class="imagen-redonda" />
+
+    <!-- Navegación -->
+    <div class="nav">
+      <button class="tablink active" onclick="openTab(event, 'perfil')">🎯 Perfil</button>
+      <button class="tablink" onclick="openTab(event, 'objetivo')">💼 Objetivo</button>
+      <button class="tablink" onclick="openTab(event, 'experiencia')">📌 Experiencia</button>
+      <button class="tablink" onclick="openTab(event, 'habilidades')">🛠️ Habilidades</button>
+      <button class="tablink" onclick="openTab(event, 'educacion')">📚 Educación</button>
+      <button class="tablink" onclick="openTab(event, 'certificados')">📜 Certificados</button>
+      <button class="tablink" onclick="openTab(event, 'referencias')">🧾 Referencias</button>
+      <button class="tablink" onclick="openTab(event, 'contacto')">📱 Contacto</button>
     </div>
 
-    <div class="objetivo">
-      Soy una persona responsable, con habilidades para conducir, orientarme en la ciudad y respetar las normas de tránsito. Busco una oportunidad para desarrollarme profesionalmente y aportar con seguridad y compromiso.
+    <!-- Secciones -->
+    <div id="perfil" class="tab-content active">
+      <div class="info">
+        <p><strong>Edad:</strong> 17 años</p>
+        <p><strong>Ubicación:</strong> Cartago, Valle del Cauca</p>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Habilidades</h2>
-      <ul>
-        <li>Conducir</li>
-        <li>Transporte de personas</li>
-        <li>Conocimiento y respeto por las normas de tránsito</li>
-        <li>Orientación y ubicación en la ciudad</li>
-        <li>Conducción preventiva y segura</li>
-      </ul>
+    <div id="objetivo" class="tab-content">
+      <div class="objetivo">
+        Soy una persona responsable, con habilidades para conducir, orientarme en la ciudad y respetar las normas de tránsito. Busco una oportunidad para desarrollarme profesionalmente y aportar con seguridad y compromiso.
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Educación</h2>
-      <ul>
-        <li>Bachillerato en curso 11 – Colegio I.E.GABO</li>
-      </ul>
-    </div>
-
-    <div class="section">
+    <div id="experiencia" class="tab-content">
       <h2>Experiencia</h2>
       <ul>
-        <li>Conductor aprendiz en entornos urbanos</li>
-        <li>Participación en simulacros y capacitaciones de seguridad vial</li>
+        <li>🚗 Conductor aprendiz en entornos urbanos</li>
+        <li>📋 Participación en simulacros y capacitaciones de seguridad vial</li>
+      </ul>
+    </div>
+
+    <div id="habilidades" class="tab-content">
+      <h2>Habilidades</h2>
+      <ul>
+        <li>🧭 Orientación y ubicación en la ciudad</li>
+        <li>🚦 Conocimiento de normas de tránsito</li>
+        <li>🛡️ Conducción preventiva y segura</li>
+        <li>👥 Transporte de personas</li>
+        <li>🚘 Manejo responsable</li>
+      </ul>
+    </div>
+
+    <div id="educacion" class="tab-content">
+      <h2>Educación</h2>
+      <ul>
+        <li>📘 Bachillerato en curso (11° grado) - I.E. GABO</li>
+      </ul>
+    </div>
+
+    <div id="certificados" class="tab-content">
+      <h2>Certificados</h2>
+      <ul>
+        <li>🧾 Curso de Seguridad Vial</li>
+        <li>🔧 Curso básico de mecánica automotriz</li>
+      </ul>
+    </div>
+
+    <div id="referencias" class="tab-content">
+      <h2>Referencias</h2>
+      <ul>
+        <li><strong>Jorge Pérez</strong> – Supervisor de ruta (315 000 1234)</li>
+        <li><strong>Luisa Martínez</strong> – Coordinadora I.E. GABO (312 456 7890)</li>
+      </ul>
+    </div>
+
+    <div id="contacto" class="tab-content">
+      <h2>Contacto</h2>
+      <ul>
+        <li>📞 Teléfono: 315 898 3571</li>
+        <li>📍 Dirección: Cartago, Valle del Cauca</li>
+        <li>📧 Correo: juanfelipe@example.com</li>
       </ul>
     </div>
   </div>
+
+  <!-- Script de pestañas -->
+  <script>
+    function openTab(evt, tabName) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const tabButtons = document.querySelectorAll('.tablink');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+
+      document.getElementById(tabName).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
+
+
 
 
 
